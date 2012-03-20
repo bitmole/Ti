@@ -4,7 +4,7 @@ require 'colored'
 require 'betabuilder'
 
 require File.expand_path(File.join(Dir.pwd, 'config/config.rb'))
-include Config
+include RbConfig
 
 BetaBuilder::Tasks.new do |config|
   # App Name

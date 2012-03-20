@@ -11,7 +11,7 @@ module Ti
           @project_name    = name
           @device_platform = platform
           @app_id          = id
-          
+
           if generate_titanium_project
             create_directories('tmp')
             copy_defaults
@@ -50,14 +50,14 @@ module Ti
             create_with_template(tempfile, "defaults/#{tempfile}", full_app_hash)
           end
 
-          # load default images
+          # restore defaults
           FileUtils.cp("/tmp/KS_nav_ui.png",    location.join("Resources/images/"))
           FileUtils.cp("/tmp/KS_nav_views.png", location.join("Resources/images/"))
         end
 
 
         def create_project_directory
-          create_directories('Resources', 'Resources/images', 'Resources/vendor', 
+          create_directories('Resources/images', 'Resources/vendor', 
                              'config', 
                              'docs', 
                              "app/#{underscore(@project_name)}/models", 
@@ -69,8 +69,8 @@ module Ti
         end
 
         def remove_old_files
-          remove_files('README')          
-          remove_directories('Resources')
+          remove_files('README')
+          remove_files('Resources/app.js')
         end
 
         def location

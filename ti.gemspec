@@ -4,7 +4,7 @@ require "ti/version"
 
 Gem::Specification.new do |s|
   s.name          = %q{ti}
-  s.version       = '0.2.0'
+  s.version       = '0.2.1'
   s.platform      = Gem::Platform::RUBY
   s.authors       = ["Robert R Evans", "Julius Francisco", "Wynn Netherland", "Rupak Ganguly"]
   s.date          = %q{2011-05-23}
@@ -22,7 +22,6 @@ Gem::Specification.new do |s|
   # using the system command
   # s.add_runtime_dependency(%q<sass>,                ["~> 3.1.2"])
   s.add_runtime_dependency(%q<coffee-script>,       ["~> 2.2.0"])
-
   s.add_runtime_dependency(%q<colored>,             ["~> 1.2"])
   s.add_runtime_dependency(%q<rake>,                ["~> 0.9.2"])
   s.add_runtime_dependency(%q<nokogiri>,            ["~> 1.4.4"])

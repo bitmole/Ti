@@ -78,14 +78,14 @@ module Ti
         end
 
         def generate_titanium_project
-          platform = ::Config::CONFIG['host_os']
+          platform = ::RbConfig::CONFIG['host_os']
           if platform =~ /linux/i || platform =~ /darwin/i
             cmd = "titanium create --name=#{@project_name} --platform=#{@device_platform} --id=#{@app_id}"
             # We need to use the session gem so that we can access the user's aliases
             bash = Session::Bash::new 'program' => 'bash --login -i'
             bash.execute(cmd) { |out, err| puts out }
           else
-             error("Currently, your OS (#{::Config::CONFIG['host_os']}) is not supported.")
+             error("Currently, your OS (#{::RbConfig::CONFIG['host_os']}) is not supported.")
              exit(0)
           end
         end
